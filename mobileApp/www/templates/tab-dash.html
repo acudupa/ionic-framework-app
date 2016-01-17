@@ -1,0 +1,34 @@
+<ion-view>
+  <ion-content>
+    <div class="container">
+      <header>
+        <img src="img/m-icon.png" class="fleft" alt="">
+        <img src="img/m-icon1.png" class="fright" alt=""> 
+      </header>
+      <div class="wrapper">
+        <div class="content">
+          <div class="logo"> <a href="#"> <img src="img/logo.png" alt=""></a></div>
+              <div ng-hide="bioNivid.isMobileNumberEntered">
+                <input type="text" placeholder="Enter the mobile number" ng-model="bioNivid.phoneNumber" />
+                <button class="button button-block button-balanced" ng-click="newNumberEntered()">
+                    Get Projects
+                </button>
+                <!--<button  value="Get Projects" class="button" ng-click="showBetaScreen()"/>-->
+              </div>
+              <div class="" ng-show="bioNivid.isMobileNumberEntered">
+                <select class="select item-input" ng-options="data.project_name for data in projectList" ng-model="bioNivid.projectSelected" ng-change="projectChanged(data)">
+                  <option value="">Select Project</option>
+                </select>
+                <button class="button button-block button-balanced" ng-click="showBetaScreen()">
+                    Go
+                </button>
+                <h3 class="aligncenter" style="color: #ADFF2F">Welcome {{bioNivid.client}}</h3>
+                <button class="button button-block button-balanced" ng-click="toggleFirstScreen()">
+                    Change Number
+                </button>
+              </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
